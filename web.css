@@ -1,0 +1,756 @@
+        /* Violet Background for the Navbar Toggler Button */
+.navbar-toggler {
+    background-color: #8A2BE2; /* Violet Color (Blue Violet) */
+    border: 1px solid #8A2BE2; /* Matching border color */
+}
+
+/* Optional: To remove the default focus box-shadow (if desired) */
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(138, 43, 226, 0.5); /* Violet focus ring */
+}
+/* Custom CSS for the Curved Background Shape on the Left */
+.book-visual-area {
+    position: relative;
+    min-height: 450px; /* Content height-ku yethaarpol setting */
+    z-index: 1; /* Ensure content is above the background */
+    overflow: hidden; /* Helps manage child positioning */
+}
+
+/* The ::before pseudo-element creates the actual curved shape */
+.book-visual-area::before {
+    content: '';
+    position: absolute;
+    top: -50px;      /* Starting position from top */
+    left: -210px;     /* Starting position from left */
+    width: 150%;     /* Make it wider than the container */
+    height: 110%;    /* Make it taller than the container */
+    margin-left: -100px;
+    
+    /* Approximate Light Purple Color from the image */
+    background-color: #e8e8f8; 
+    
+    /* KEY PART: Creates the curve using a massive radius on the right side */
+    border-radius: 0 50% 50% 0; 
+    
+    z-index: -1; /* Move behind the book image */
+}
+/* --- Custom CSS for Layout & Styling --- */
+/* --- Custom CSS for Layout & Styling --- */
+
+/* 1. Main Heading Color */
+.custom-heading-color {
+    color: #333; /* Darker text color as seen in the image */
+    line-height: 1.1;
+    font-size: 3.5rem; /* Larger font size for the heading */
+}
+
+/* 2. Paragraph Text Color (if different from Bootstrap's default .text-muted) */
+.custom-paragraph-text {
+    color: #555; /* Slightly darker than default .text-muted */
+}
+
+/* 3. Custom Button Style (Matching the light blue/purple in the image) */
+.custom-read-more-btn {
+    background-color: #7d8be0; /* Light blue/purple from the image */
+    border-color: #7d8be0;
+    padding: 10px 30px; /* Adjust padding for button size */
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 5px; /* Slightly rounded corners */
+}
+
+.custom-read-more-btn:hover {
+    background-color: #6373d6; /* Slightly darker on hover */
+    border-color: #6373d6;
+}
+
+/* 4. Curved Background Shape and Image Positioning */
+.book-visual-wrapper {
+    position: relative;
+    width: 200%; /* Adjust as needed */
+    max-width: 500px; /* Max width for the image container */
+    padding-top: 200px; /* Add some space above the book for the curve to appear */
+    padding-bottom: 50px; /* Add some space below */
+    z-index: 1; /* Ensure the wrapper is a stacking context */
+    overflow: hidden; /* Important to hide parts of the pseudo-element that go outside */
+    margin-left: -80px;
+    margin-top:-50px;
+}
+
+/* The ::before pseudo-element creates the actual curved background shape */
+.book-visual-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;           /* Start from the top of the wrapper */
+    left: 0;          /* Start from the left of the wrapper */
+    width: 120%;      /* Make it wider to create the curve effect */
+    height: 100%;     /* Match wrapper height */
+    margin-top: -400px;
+    
+    background-color: #e8e8f8; /* Light purple color from the image */
+    
+    /* KEY PART: Creates the curve using a massive radius on the right side */
+    /* This creates a semi-circular effect on the right edge */
+    border-radius: 0 50% 50% 0; /* Top-right, Bottom-right radius */
+    
+    z-index: -1;      /* Move behind the image */
+}
+
+.book-image {
+    position: relative; /* Position the image relative to its wrapper */
+    z-index: 2;         /* Ensure the image is above the curved background */
+    width: 70%;         /* Adjust book image size within the wrapper */
+    margin: 0 auto;     /* Center the image horizontally */
+    margin-top: 0;
+    height: 400px;
+    display: block;
+    /* Optional: Add some box-shadow if the original has it */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    background-color: transparent;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) { /* For small devices */
+    .book-intro-section .col-lg-5,
+    .book-intro-section .col-md-6 {
+        order: 2; /* Image below text on small screens */
+    }
+    .book-intro-section .text-md-start {
+        order: 1; /* Text above image on small screens */
+        text-align: center !important;
+    }
+    .custom-heading-color {
+        font-size: 2.5rem; /* Smaller heading on small screens */
+    }
+    .book-visual-wrapper {
+        margin: 0 auto; /* Center wrapper on small screens */
+    }
+}
+/* --- Custom CSS for The Moon Network Section --- */
+
+/* 1. Overall Section Styling */
+.moon-network-section {
+    background-color: #f8f8f8; /* Light background for the section */
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* 2. Title Color */
+.moon-title-color {
+    color: #333; /* Dark text color */
+    line-height: 1.2;
+    font-size: 3.2rem; /* Adjusted font size */
+}
+
+/* 3. Paragraph Text Color */
+.moon-paragraph-text {
+    color: #555; /* Slightly darker than default .text-muted */
+    font-size: 1.1rem;
+}
+
+/* 4. Play Button Style */
+.moon-play-btn {
+    color: #5a67d8; /* Darker blue for icon and text */
+    border-color: #e0e0f8; /* Very light border */
+    background-color: #e0e0f8; /* Light blue/purple background for the button */
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 50px; /* Highly rounded pill shape */
+    transition: all 0.3s ease;
+}
+
+.moon-play-btn i {
+    font-size: 1.5rem; /* Icon size */
+}
+
+.moon-play-btn:hover {
+    background-color: #d1d6fa; /* Slightly darker on hover */
+    border-color: #d1d6fa;
+    color: #4a54c0;
+}
+
+
+/* 5. Curved Background Shape and Image Positioning (RIGHT SIDE) */
+.moon-book-visual-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 450px; /* Adjust max-width as needed */
+    height: 500px; /* Fixed height to control the curve more easily */
+    padding-top: 50px; /* Space for the book */
+    padding-bottom: 50px; /* Space for the book */
+    z-index: 1; 
+    overflow: hidden; /* Crucial to hide overflow of pseudo-element */
+    display: flex; /* Use flexbox to center the book image */
+    justify-content: center;
+    align-items: center;
+}
+
+/* The ::before pseudo-element creates the actual curved background shape */
+.moon-book-visual-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;           
+    right: 0;         /* FIX: Position from the right */
+    
+    width: 180%;      /* Make it wider to create the curve effect */
+    height: 100%;     
+    
+    background-color: #6a76e0; /* Darker blue/purple color from the image */
+    
+    /* KEY PART: Creates the curve using a massive radius on the LEFT side */
+    border-radius: 50% 0 0 50%; /* Top-left, Bottom-left radius */
+    
+    z-index: -1;      /* Move behind the image */
+}
+
+.moon-book-image {
+    position: relative; /* Position the image relative to its wrapper */
+    z-index: 2;         /* Ensure the image is above the curved background */
+    width: 70%;         /* Adjust book image size within the wrapper */
+    /* No margin auto needed if using flexbox for centering */
+    display: block;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+    transform: rotate(5deg); /* Slightly rotate the book as in the image */
+    max-height: 400px; /* Limit image height */
+    object-fit: contain; /* Ensure image fits */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) { /* For small devices */
+    .moon-network-section .row {
+        flex-direction: column-reverse; /* Stack image above text on small screens */
+    }
+    .col-lg-7, .col-md-6 {
+        text-align: center !important; /* Center text on small screens */
+    }
+    .moon-title-color {
+        font-size: 2.5rem; /* Smaller heading on small screens */
+    }
+    .moon-book-visual-wrapper {
+        height: 350px; /* Smaller height for wrapper on small screens */
+        max-width: 300px;
+        margin-bottom: 40px;
+    }
+    .moon-book-visual-wrapper::before {
+        border-radius: 0 0 50% 50%; /* Optional: change curve for small screens if needed */
+        width: 100%;
+        height: 150%;
+        left: 0;
+        top: -50%;
+    }
+    .moon-book-image {
+        transform: none; /* Remove rotation on small screens */
+    }
+}
+/* --- Custom CSS for Logos and Discount Section --- */
+
+.logos-discount-section {
+    /* Image-il ulla maadhiri background color-ai light gray-a set panrom */
+    background-color: #f7f7f7; 
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/* Logos Styling */
+.client-logo {
+    /* Logos-in width-ai limit panna vendum */
+    max-width: 150px; 
+    height: auto;
+    /* Opacity-ai kuraithu light gray-a kaattalaam */
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.client-logo:hover {
+    opacity: 1; /* Hover seiyum podhu full color-kku maara vendum */
+}
+
+.logo-text {
+    /* Keel irukkum chinna text-kku styling */
+    font-size: 0.7rem;
+    color: #888;
+    margin-top: 5px;
+    letter-spacing: 1px; /* Spacing between letters */
+}
+
+/* Discount Heading Styling */
+.discount-heading {
+    /* Image-il ulla maadhiri oru stylish/cursive font-a use panna vendum. 
+       Idharku oru Google Font-ai link panna vendum (Example: Great Vibes or Playfair Display). */
+    font-family: 'Playfair Display', serif; /* Or any stylish font */
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Discount Subtext Styling */
+.discount-subtext {
+    font-size: 1.1rem;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 0;
+}
+/* --- Custom CSS for Book Grid Section --- */
+
+.book-grid-section {
+    /* Image-il ulla maadhiri background color light gray-a irukku */
+    background-color: #f8f8f8; 
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.book-card {
+    /* Card-kku ulla padding-um, veliye chinna shadow-um kodukalaam (optional) */
+    background-color: white;
+    padding: 15px; 
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Chinna soft shadow */
+    height: 100%; /* Ensure all cards are the same height */
+}
+
+.book-cover-img {
+    /* Image-in size-ai control seiya vendum */
+    max-height: 500px; /* Example height */
+    width: 100%;
+    /* Original image-il box shadow illa, but simple look-kku idha use pannalaam: */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); 
+    display: block; /* Ensure no extra space below the image */
+}
+
+/* Book Title Styling */
+.book-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px; /* Chinna spacing */
+    text-transform: uppercase; /* Uppercase title */
+}
+
+/* Book Author Styling */
+.book-author {
+    font-size: 0.95rem;
+    color: #888;
+    margin-bottom: 0;
+}
+
+/* Hover Effect (Optional: Mouse kondu pogum podhu chinna effect) */
+.book-card:hover {
+    transform: translateY(-5px); /* Slightly move up */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) { /* Medium devices: Tablet */
+    /* Medium screens-la (MD) oru varisaiyil 2 cards (col-md-6) irukkum */
+}
+
+@media (max-width: 575.98px) { /* Small devices: Mobile */
+    /* Small screens-la (XS) oru varisaiyil 1 card (col-12) irukkum (Default Bootstrap behaviour) */
+}
+/* --- Custom CSS for Book Deal Series Section --- */
+
+.book-deal-series-section {
+    background-color: #ffffff; /* White background */
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.deal-series-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+}
+.deal-series-subtext {
+    color: #888;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* 1. Main Block Styling and Spacing */
+.book-deal-container {
+    max-width: 1100px; /* Optional: Adjust width for better visual flow */
+    margin: 0 auto;
+}
+
+.deal-block {
+    margin-bottom: 20px; /* Space between blocks */
+    border-radius: 15px; /* Common border radius for blocks */
+    overflow: hidden; /* To apply border-radius to internal content */
+}
+
+/* 2. Top Left Block (The Moon Network Title) */
+.block-top-left {
+    background-color: #f0f0f0; /* Light gray background */
+    display: flex; /* Use flex to align red card and text side-by-side */
+    align-items: center;
+}
+
+.red-card {
+    background-color: #c93b3b; /* Dark Red color */
+    width: 40%; 
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Optional: Custom font for the title */
+    font-family: serif; 
+    font-weight: 800;
+}
+
+.text-snippet {
+    width: 60%;
+    padding-left: 20px;
+}
+
+/* 3. Top Right Block (The Moon Network Cover) */
+.block-top-right {
+    /* Background and Image are the same dark blue block */
+    background-color: #313350; 
+    height: 250px; /* Adjust height to match the combined height of the left block */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover-img-top {
+    /* Image-ai sariyaana idathil vaika vendum. 
+       Idhai CSS-il background-image-aaga vaithaal, curve-ai control panna easy-aaga irukkum. */
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+/* 4. Bottom Left Block (Text Snippet) */
+.block-bottom-left {
+    background-color: #f0f0f0; /* Light gray background */
+    height: 200px; /* Adjust height */
+}
+
+/* 5. Bottom Right Block (IF YOU TELL Covers) */
+.block-bottom-right-row {
+    margin: 0 -10px; /* Negate row padding if necessary */
+}
+
+.cover-img-bottom {
+    /* Two images are placed side-by-side with no gap */
+    width: 100%;
+    height: 200px; /* Match height of bottom left block */
+    object-fit: cover;
+    display: block;
+}
+
+/* Common Text Styling */
+.snippet-text {
+    font-size: 0.95rem;
+    color: #555;
+}
+.book-detail-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #c93b3b; /* Red link color */
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    /* On tablets and mobile, stack columns vertically */
+    .deal-left-col,
+    .deal-right-col {
+        margin-bottom: 20px;
+    }
+    .block-top-left {
+        flex-direction: column;
+    }
+    .red-card,
+    .text-snippet {
+        width: 100%;
+    }
+    .block-top-right,
+    .cover-img-bottom,
+    .block-bottom-left {
+        height: auto; /* Allow height to adjust */
+    }
+}
+/* --- Custom CSS for Testimonials Section --- */
+
+.testimonial-section {
+    /* Image-il ulla maadhiri background color light gray-a irukku */
+    background-color: #f7f7f7; 
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* 1. Video Play Button Styling */
+.video-play-btn {
+    /* Button-ai oru periya blue circle-aaga uruvaakka vendum */
+    width: 60px;
+    height: 60px;
+    background-color: #5a67d8; /* Blue color (approximate) */
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s;
+}
+
+.video-play-btn:hover {
+    background-color: #4a54c0;
+}
+
+/* Play icon-ai sariyaaga center-il vaika */
+.video-play-btn i {
+    transform: translateX(3px); /* Triangle shape-ai sariyaana idathil vaika */
+}
+
+/* 2. Quote Text Styling */
+.quote-text {
+    font-family: serif; /* Image-il stylish font use panni irukku */
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #444;
+}
+
+/* 3. Heading and Subtext Styling */
+.customer-heading {
+    /* Discount Section-il irundha maadhiri style */
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+.customer-subtext {
+    color: #888;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* 4. Testimonial Card Styling */
+.testimonial-card {
+    /* Simple card/div-kku styling illa, mainly text styling dhaan */
+    text-align: left;
+    padding: 20px;
+}
+
+.customer-avatar {
+    /* Customer image-ai oru chinna circle-aaga uruvaakka vendum */
+    width: 90px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.review-text {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.customer-name {
+    /* Name bold-aaga irukkum */
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0;
+}
+
+.customer-role {
+    /* Role (Customer) light color-la irukkum */
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 0;
+}
+
+/* Horizontal Rule (line) Styling */
+.custom-hr {
+    border: none;
+    height: 1px;
+    background-color: #e0e0e0;
+    max-width: 500px;
+    margin: 0 auto 60px auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+    .testimonial-card {
+        text-align: center;
+    }
+    .testimonial-card .d-flex {
+        flex-direction: column;
+        align-items: center !important;
+    }
+    .customer-avatar {
+        margin-right: 0 !important;
+        margin-bottom: 15px;
+    }
+    .customer-info {
+        text-align: center !important;
+        padding-left: 0 !important;
+        margin-top: 15px !important;
+    }
+    .review-text {
+        text-align: center !important;
+    }
+}
+/* --- Book Category Section CSS --- */
+
+.book-category-section {
+    background-color: #ffffff; /* White background */
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.category-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+.category-subtext {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.all-category-btn {
+    background-color: white;
+    border: 1px solid #7d8be0; /* Light blue/purple border */
+    color: #7d8be0;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+}
+.all-category-btn:hover {
+    background-color: #7d8be0;
+    color: white;
+}
+
+/* 1. Curved Visual Wrapper (The light blue/purple base shape) */
+.category-visual-wrapper {
+    position: relative;
+    height: 350px; /* Adjust height based on your design */
+    overflow: hidden; 
+    /* The curved shape will be created here using the pseudo-element */
+    z-index: 1; 
+}
+
+/* The ::before pseudo-element creates the curved shape */
+.category-visual-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50px; /* Slight offset for better visual cover */
+    left: -50px;
+    width: 150%; 
+    height: 120%; /* Taller to cover better */
+    
+    background: #e8e8f8; /* Light purple base color */
+    
+    /* Key: Curve is on the RIGHT side */
+    border-radius: 0 50% 50% 0; 
+    
+    z-index: 1; /* Below the dark category cards (z-index 2) */
+}
+
+/* 2. Category Cards Container (The dark overlay) */
+.category-cards-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 85%; /* Takes up 85% of the right column width */
+    /* Dark semi-transparent background color, slightly darker blue/purple tint */
+    background: rgba(49, 51, 80, 0.85); 
+    z-index: 2;
+    border-radius: 10px; /* Slight rounding of the dark box */
+}
+
+.category-card {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Text bottom-a irukka vendum */
+    align-items: center;
+    color: white;
+    padding: 20px 10px;
+    
+    /* Background images for each category (Need actual images for this) */
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay; /* Blends the image with the dark background */
+    opacity: 0.8;
+}
+
+.category-card .card-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+/* --- Footer Section CSS --- */
+
+.main-footer {
+    background-color: #ffffff; 
+    color: #555;
+    border-top: 1px solid #eee;
+    padding-top: 50px !important;
+    padding-bottom: 20px !important;
+    font-size: 0.95rem;
+}
+
+.footer-heading {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.footer-text, .contact-info {
+    line-height: 1.8;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-top: 20px;
+    /* REEDBOOK logo font style */
+}
+
+/* Social Icons */
+.social-link {
+    color: #555;
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+
+.social-link:hover {
+    color: #7d8be0; /* Hover color */
+}
+
+/* Contact Info */
+.contact-info i {
+    margin-right: 5px;
+    color: #7d8be0; /* Icon color */
+}
+.contact-info br {
+    line-height: 2;
+}
+
+.copyright-text {
+    font-size: 0.85rem;
+    color: #999 !important;
+}
+.romantic { background-image: url('https://picsum.photos/200/300?random=2'); }
+.horror { background-image: url('https://picsum.photos/400/300?random=3'); }
+.thriller { background-image: url('https://picsum.photos/100/200?random=4'); }
